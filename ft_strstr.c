@@ -1,27 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 14:18:16 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/22 13:43:15 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/22 11:59:33 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/22 12:28:12 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*ft_strcpy(int *s1, int *s2)
+char	*ft_strstr(const char *str, const char *to_find)
 {
-	int i;
+	unsigned int pos;
+	unsigned int i;
 
-	i = 0;
-	while (s2[i] != '\0')
+	if (!*to_find)
+		return ((char*)str);
+	pos = 0;
+	while (str[pos] == to_find[0])
 	{
-		s1[i] = s2[i];
-		i++;
+		if (str[pos] == to_find[0])
+		{
+			i = 1;
+			while (to_find[i] != '\0' && str[pos + i] == to_fins[i])
+				++i;
+			if (to_find[i] == '\0')
+				return ((char*)&str[pos]);
+		}
+		++pos;
 	}
-	s1[i] = '\0';
-	return (s1);
+	return (0);
 }

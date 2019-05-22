@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/20 14:18:16 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/22 13:43:15 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/22 11:51:47 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/22 12:29:18 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	*ft_strcpy(int *s1, int *s2)
+char	*ft_strdup(const char *src)
 {
-	int i;
+	char	*new;
+	int		i;
+	int		size;
 
+	size = 0;
+	while (src[size])
+		++size;
+	if (!(new = malloc(sizeof(char) * (size + 1))))
+		return (NULL);
 	i = 0;
-	while (s2[i] != '\0')
+	while (src[i])
 	{
-		s1[i] = s2[i];
+		new[i] = src[i];
 		i++;
 	}
-	s1[i] = '\0';
-	return (s1);
+	new[i] = '\0';
+	return (new);
 }
