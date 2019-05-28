@@ -6,20 +6,13 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/24 16:54:25 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/05/28 17:34:42 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-
-typedef	struct	s_list
-{
-	void				*content;
-	size_t				content_size;
-	struct	s_list	*next;
-}						t_list;
 
 void	ft_lstadd(t_list **alst, t_list *new)
 void	ft_lstaddend(t_list **alst, t_list *new)
