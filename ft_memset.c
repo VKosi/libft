@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:30:58 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/26 14:20:49 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/29 11:43:10 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/29 16:53:14 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_memset(char *ptr, int x, size_t n)
 {
-	size_t	i;
+	while (n)
+	{
+		*ptr = x;
+		ptr++;
+		n--;
+	}
+	return (ptr);
+}
 
-	if (n == 0)
-		return (0);
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		++i;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+int main() 
+{ 
+    char str[50] = "GeeksForGeeks is for programming geeks."; 
+    printf("\nBefore memset(): %s\n", str); 
+  
+    // Fill 8 characters starting from str[13] with '.' 
+    memset(str + 13, '.', 8*sizeof(char)); 
+  
+    printf("After memset():  %s", str); 
+    return 0; 
 }

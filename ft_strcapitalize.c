@@ -1,25 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/21 16:30:58 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/26 14:20:49 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/26 13:17:27 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/26 13:42:27 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+char	*ft_strcapitalize(char *s)
 {
-	size_t	i;
+	int i;
 
-	if (n == 0)
-		return (0);
 	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i] && i < n - 1)
-		++i;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+	s[i] = ft_toupper(s[i]);
+	while (s[++i])
+	{
+		s[i] = ft_tolower(s[i]);
+		if (!ft_isalnum(s[i - 1]))
+			s[i] = ft_toupper(s[i]);
+	}
+	return (s);
 }
