@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/29 11:57:44 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/05/31 15:17:26 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,6 @@
 # define LIBFT_H
 # include <string.h>
 
-void	ft_lstadd(t_list **alst, t_list *new);
-void	ft_lstaddend(t_list **alst, t_list *new);
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void	ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void	ft_putchar_fd(char c, int fd);
 void	ft_putendl(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
