@@ -1,21 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_islower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 13:11:49 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/03 13:12:18 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/03 15:24:40 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/03 15:33:49 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strcmp(const char *s1, const char *s2)
-{
-	int	i;
+#include "libft.h"
 
-	i = 0;
-	while (s1[i] && s2[i] && s1[i] == s2[i])
-		++i;
-	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
+int	ft_islower(int c)
+{
+	if (c >= 97 && c <= 122)
+		return (0);
+	else
+		return(1);
 }
