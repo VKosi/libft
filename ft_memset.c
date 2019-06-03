@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 11:45:40 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/24 11:45:57 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/29 11:43:10 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/29 16:53:14 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+char	*ft_memset(char *ptr, int x, size_t n)
 {
-	return (c >= 65 && c <= 90);
+	while (n)
+	{
+		*ptr = x;
+		ptr++;
+		n--;
+	}
+	return (ptr);
+}
+
+int main() 
+{ 
+    char str[50] = "GeeksForGeeks is for programming geeks."; 
+    printf("\nBefore memset(): %s\n", str); 
+  
+    // Fill 8 characters starting from str[13] with '.' 
+    memset(str + 13, '.', 8*sizeof(char)); 
+  
+    printf("After memset():  %s", str); 
+    return 0; 
 }

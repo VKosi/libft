@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isupper.c                                       :+:      :+:    :+:   */
+/*   ft_strcapitalize.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/24 11:45:40 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/24 11:45:57 by vkosi            ###   ########.fr       */
+/*   Created: 2019/05/26 13:17:27 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/26 13:42:27 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isupper(int c)
+char	*ft_strcapitalize(char *s)
 {
-	return (c >= 65 && c <= 90);
+	int i;
+
+	i = 0;
+	s[i] = ft_toupper(s[i]);
+	while (s[++i])
+	{
+		s[i] = ft_tolower(s[i]);
+		if (!ft_isalnum(s[i - 1]))
+			s[i] = ft_toupper(s[i]);
+	}
+	return (s);
 }

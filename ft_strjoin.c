@@ -1,3 +1,31 @@
+<<<<<<< HEAD
+=======
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/05/24 12:41:33 by vkosi             #+#    #+#             */
+/*   Updated: 2019/05/26 14:22:13 by vkosi            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
+{
+	char	*result;
+	size_t	size;
+
+	if (s1 && s2)
+		size = (size_t)(ft_strlen((char*)s1) + ft_strlen((char*)s2));
+	else if (s1)
+		size = (size_t)(ft_strlen((char*)s1));
+	else if (s2)
+		size = (size_t)(ft_strlen((char*)s2));
+>>>>>>> ef4ae5a1380d0ec8b0fb3a602267a5b0747c2244
 	else
 		return (NULL);
 	if (!(result = ft_memalloc(size)))
