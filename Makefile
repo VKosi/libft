@@ -6,7 +6,7 @@
 #    By: vkosi <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/25 12:09:01 by vkosi             #+#    #+#              #
-#    Updated: 2019/05/31 16:05:53 by vkosi            ###   ########.fr        #
+#    Updated: 2019/06/10 17:55:14 by vkosi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,12 @@ SRCS = *.c
 
 OBJECTS = *.o
 
-all: $(NAME)
-
-$(NAME): libft.h $(SRCS)
-	ar re $(NAME) $(OBJECTS)
-	ranlib $(NAME)
-
-CC: 
+all:
 	gcc -Wall -Wextra -Werror -c $(SRCS)
+
+$(NAME):
+	ar rc $(NAME) $(OBJECTS)
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJECTS)

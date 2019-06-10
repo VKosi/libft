@@ -6,15 +6,15 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/21 16:17:17 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/21 16:19:19 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/10 17:30:33 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libfft.h"
+#include "libft.h"
 
 int	ft_toupper(int c)
 {
-	if (ft_islower(c))
+	if (ft_tolower(c))
 		return (c - 32);
 	return (c);
 }
