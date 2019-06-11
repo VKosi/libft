@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/26 13:12:52 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/26 13:14:13 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/11 12:41:46 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_bzero(void *to, size_t count)
 {
-	ft_memset(to, 0 ,count);
+	ft_memset(to, 0, count);
 }

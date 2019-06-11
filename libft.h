@@ -6,13 +6,14 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/10 18:03:44 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/11 15:01:45 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
+# include <unistd.h>
 
 void	ft_putchar(char c);
 void	ft_putstr(char const *str);
@@ -39,7 +40,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s);
 char	**ft_strsplit(char const *s, char c);
-void	*ft_memset(void *ptr, int x, size_t n);
+void	*ft_memset(char *ptr, int x, size_t n);
 void	ft_bzero(void *s, size_t n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memccpy(void *dst, const void *restrict src, int c, size_t n);
@@ -70,4 +71,4 @@ int		ft_tolower(int c);
 int		ft_isupper(int c);
 int		ft_islower(int c);
 
-# endif
+#endif

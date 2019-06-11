@@ -6,10 +6,10 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:18:49 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/03 13:19:22 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/11 12:46:43 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-:wn
+
 #include "libft.h"
 
 char	*ft_strcpy(char *dest, const char *src)
