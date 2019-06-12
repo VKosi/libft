@@ -6,13 +6,13 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:13:35 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/03 13:46:47 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/12 17:23:02 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncat(char *dest, const char *src, size_t nb)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
 	int		i;
 	size_t	j;
@@ -21,7 +21,7 @@ char	*ft_strncat(char *dest, const char *src, size_t nb)
 	while (dest[i] != '\0')
 		i++;
 	j = 0;
-	while (src[j] != '\0' && j < nb)
+	while (src[j] != '\0' && j < n)
 	{
 		dest[i] = src[j];
 		i++;
@@ -29,4 +29,12 @@ char	*ft_strncat(char *dest, const char *src, size_t nb)
 	}
 	dest[i] = '\0';
 	return (dest);
+}
+
+int main()
+{
+	char src[] = "Marsh ";
+	char dest[] = "Who is the Cookie Monster ? ...";
+
+	printf("%s" , ft_strncat(dest, src ,150));
 }
