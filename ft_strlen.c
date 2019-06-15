@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/03 13:46:20 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/03 13:46:23 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/14 16:03:29 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	count;
+	size_t i;
 
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
 }

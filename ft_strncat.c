@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/22 13:13:35 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/12 17:23:02 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/12 17:49:55 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,4 @@ char	*ft_strncat(char *dest, const char *src, size_t n)
 	}
 	dest[i] = '\0';
 	return (dest);
-}
-
-int main()
-{
-	char src[] = "Marsh ";
-	char dest[] = "Who is the Cookie Monster ? ...";
-
-	printf("%s" , ft_strncat(dest, src ,150));
 }

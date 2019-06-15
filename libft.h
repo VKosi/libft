@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/12 17:17:37 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/14 16:03:50 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define LIBFT_H
 # include <string.h>
 # include <unistd.h>
-# include <stdio.h>
+# include <stdlib.h>
 
 void	ft_putchar(int c);
 void	ft_putstr(char const *str);
