@@ -5,30 +5,39 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/03 13:57:54 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/03 13:57:59 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/19 15:28:44 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/19 17:37:20 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char * ft_strtrim(char const *s)
 {
-	char			*result;
-	unsigned int	start;
-	unsigned int	size;
-	unsigned int	spaces_count;
+	char            *s2;
+	unsigned int    i;
+	unsigned int    i2;
+	unsigned int    i3;
 
-	if (!s)
+	i = 0;
+	i3 = 0;
+	i2 = ft_strlen(s) - 1;
+	s2 = (char *)malloc(sizeof(char)* (i2 - i + 2));
+	if (!s || ((char *)s2 == NULL))
 		return (NULL);
-	size = (unsigned int)ft_strlen((char*)s);
-	spaces_count = ft_strcntfirstchar((char*)s, " \n\t");
-	start = spaces_count;
-	if (size > spaces_count)
-		spaces_count += ft_strcntlastchar((char*)s, " \n\t");
-	size -= spaces_count;
-	if (!(result = ft_memalloc((size_t)size + 1)))
-		return (NULL);
-	result = ft_strncpy(result, (char*)s + start, size);
-	return (result);
+	if (ft_strlen(s) == 0)
+		return ("");
+	while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
+		i++;
+	while ((s[i2] == ' ' && i2 > i) || (s[i2] == '\t' && i2 > i) || (s[i2] == '\n' && i2 > i))
+		i2--;
+	s2[i2++] = '\0';
+	while (i < i2)
+	{
+		s2[i3] = s[i];
+		i3++;
+		i++;
+	}
+	s2[i3] = '\0';
+	return (s2);
 }
