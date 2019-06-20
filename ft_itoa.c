@@ -6,26 +6,11 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:46:00 by vkosi             #+#    #+#             */
-/*   Updated: 2019/05/24 11:46:29 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/20 18:09:49 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-#include <stdlib.h>
-
-static int		get_nb_size(unsigned int nb)
-{
-	unsigned int	size;
-
-	size = 0;
-	while (nb >= 10)
-	{
-		nb /= 10;
-		++size;
-	}
-	return (size + 1);
-}
 
 char			*ft_itoa(int nbr)
 {
@@ -38,7 +23,7 @@ char			*ft_itoa(int nbr)
 		nb = (unsigned int)(nbr * -1);
 	else
 		nb = (unsigned int)nbr;
-	size = (unsigned int)get_nb_size(nb);
+	size = (unsigned int)ft_digit_size(nb);
 	index = 0;
 	if (!(str = (char*)malloc(sizeof(char) * (size + 1 + (nbr < 0 ? 1 : 0)))))
 		return (0);

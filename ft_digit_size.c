@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_digit_size.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/05/29 11:43:10 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/20 13:57:11 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/20 17:32:03 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/20 18:05:22 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-void	*ft_memset(void *ptr, int x, size_t n)
+int		ft_digit_size(unsigned int dig)
 {
-	size_t i;
+	unsigned int	size;
 
-	i = 0;
-	while (i < n)
+	size = 0;
+	while (dig >= 10)
 	{
-		*(unsigned char*)(ptr + i) = (unsigned char)x;
-		i++;
+		dig /= 10;
+		++size;
 	}
-	return (ptr);
+	return (size + 1);
 }
