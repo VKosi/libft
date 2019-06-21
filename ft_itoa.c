@@ -6,11 +6,24 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 11:46:00 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/20 18:09:49 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/21 11:00:07 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int				ft_digit_size(unsigned int dig)
+{
+	unsigned int	size;
+
+	size = 0;
+	while (dig >= 10)
+	{
+		dig /= 10;
+		++size;
+	}
+	return (size + 1);
+}
 
 char			*ft_itoa(int nbr)
 {

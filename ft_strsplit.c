@@ -5,36 +5,72 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/15 12:48:49 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/15 15:25:54 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/21 12:20:41 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/21 15:49:52 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static size_t	ft_numwrds(char const *s, char c)
+{
+	size_t	i;
+	size_t	control;
+
+	i = 0;
+	control = 0;
+	while (s[i] != '\0')
+	{
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i])
+		{
+			while (s[i] && s[i] != c)
+				i++;
+			control++;
+		}
+	}
+	return (control);
+}
+
 char	**ft_strsplit(char const *s, char c)
 {
-	char	**b;
-	size_t	word_contents;
-	size_t	word_country;
 	size_t	i;
-	size_t	start;
-	
-	if (!s || !c)
+	size_t	j;
+	size_t	k;
+	char	**ptopntr;
+
+	if (s == NULL)
 		return (NULL);
-	if (!(b = (char **)ft_memalloc((ft_strlen(s ,c) + 1) * sizeof(char *))))
+	i = 0;
+	k = 0;
+	/*ft_putchar('\n');
+	ft_putnbr(ft_numwrds(s, c));
+	ft_putchar('\n');*/
+	ptopntr = (char **)malloc(sizeof(char *) * (ft_numwrds(s, c) + 1));
+	if (ptopntr == NULL)
 		return (NULL);
-	word_country = 0;
-	word_contents = 0;
-	i = -1;
-	start = 0;
-	while (s[++i])
+	while (s[i] != '\0')
 	{
-		if (word_contents && s[i] == c)
-			b[word_country++] = ft_strsub(s, start, i - start);
-		if (!word_contents && s[i] == c) ? 0 : 1;
+		if (s[i] == c)
+			i++;
+		else
+		{
+			j = i;
+			while (s[i] != '\0' && s[i] != c)
+				i++;
+			if (s[i] == '\0')
+				i++;
+			ptopntr[k] = ft_strsub(s, j, i - j);
+			k++;
+		}
 	}
-	if (word_contents)
-		b[word_country] = ft_strsub(*b, start, i - start);
-	return (b);
+	ptopntr[k] = NULL;
+/*	k = 0;
+	while (ptopntr[k] != NULL)
+	{
+		ft_putendl(ptopntr[k]);
+		k++;
+	}*/
+	return (ptopntr);
 }

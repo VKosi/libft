@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/11 12:39:48 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/14 16:07:34 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/21 11:03:58 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,6 @@
 
 void	ft_putendl(char const *s)
 {
-	int i;
-
-	i = 0;
-	while (s[1] != '\0')
-		ft_putchar('\n');
+	ft_putstr((char*)s);
+	ft_putchar('\n');
 }
