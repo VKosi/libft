@@ -6,7 +6,7 @@
 #    By: vkosi <marvin@42.fr>                       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/05/25 12:09:01 by vkosi             #+#    #+#              #
-#    Updated: 2019/06/19 17:26:59 by vkosi            ###   ########.fr        #
+#    Updated: 2019/06/24 12:15:27 by vkosi            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,7 @@ SRCS =  ft_atoi.c ft_atoi_base.c ft_bzero.c ft_dup.c \
 		ft_strcpy.c ft_strdel.c ft_strdup.c ft_strequ.c ft_striter.c \
 		ft_striteri.c ft_strjoin.c ft_strlcat.c ft_strlen.c ft_strmap.c \
 		ft_strmapi.c ft_strncat.c ft_strncmp.c ft_strncpy.c ft_strnequ.c \
-		ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c \
+		ft_strnew.c ft_strnstr.c ft_strrchr.c ft_strrev.c ft_strsplit \
 		ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 
 OBJECTS = 	$(SRCS:%.c=%.o)
