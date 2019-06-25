@@ -6,15 +6,13 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/21 15:53:46 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/25 16:32:14 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
 
 void	ft_putchar(int c);
 void	ft_putstr(char const *str);
@@ -25,6 +23,7 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
+size_t	ft_word_count(char const *s, char c);
 char	**ft_strsplit(char const *s, char c);
 int		ft_atoi(const char *str);
 void	*ft_memalloc(size_t n);

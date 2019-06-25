@@ -5,40 +5,21 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/24 15:35:33 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/24 16:50:45 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/25 16:39:45 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/25 17:50:35 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-static size_t        ft_word_count(char const *s, char c)
-{
-    int            i;
-    size_t        len;
-    i = 0;
-    len = 0;
-    while (s[i])
-    {
-        while (s[i] && s[i] == c)
-            i++;
-        if (s[i])
-        {
-            while (s[i] && s[i] != c)
-                i++;
-            len++;
-        }
-    }
-    return (len);
-}
-
-char                **ft_strsplit(char const *s, char c)
+char			**ft_strsplit(char const *s, char c)
 {
     char        **tab;
-    size_t        len;
-    int            i;
-    int            begin;
-    if (!s || !(tab = (char **)malloc(sizeof(char)) (ft_word_count(s, c) + 1)))
+    size_t		len;
+    int			i;
+    int			begin;
+    if (!s || !(tab = (char **)malloc(sizeof(char *) * ft_word_count(s, c) + 1)))
         return (NULL);
     i = 0;
     len = 0;
