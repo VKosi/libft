@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/25 16:32:14 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/26 17:19:21 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl_fd(char const *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	*ft_itoa(int n);
-size_t	ft_word_count(char const *s, char c);
 char	**ft_strsplit(char const *s, char c);
 int		ft_atoi(const char *str);
 void	*ft_memalloc(size_t n);
