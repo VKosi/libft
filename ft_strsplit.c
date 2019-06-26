@@ -6,12 +6,32 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/25 16:39:45 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/25 17:50:35 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/26 14:22:30 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
+static size_t	ft_word_count(char const *s, char c)
+{
+    int			i;
+    size_t		len;
+    i = 0;
+    len = 0;
+    while (s[i])
+    {
+        while (s[i] && s[i] == c)
+            i++;
+        if (s[i])
+        {
+            while (s[i] && s[i] != c)
+				i++;
+			len++;
+		}
+	}
+	return (len);
+}
 
 char			**ft_strsplit(char const *s, char c)
 {
@@ -35,6 +55,6 @@ char			**ft_strsplit(char const *s, char c)
             tab[len++] = ft_strsub(s, begin, i - begin);
         }
     }
-    tab[len] = NULL;
+    tab[len] = (NULL);
     return (tab);
 }
