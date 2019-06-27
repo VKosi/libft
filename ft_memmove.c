@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/10 14:00:36 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/10 14:00:40 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/27 15:51:24 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	ptr = (unsigned char*)dst;
 	ptr2 = (unsigned char*)src;
 	i = 0;
+	if ((!dst || dst == '\0') && (!src || src == '\0'))
+		return (NULL);
 	if (ptr2 < ptr)
 		while (++i <= len)
 			ptr[len - i] = ptr2[len - i];
