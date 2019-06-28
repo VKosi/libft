@@ -5,39 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/19 15:28:44 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/27 17:43:20 by vkosi            ###   ########.fr       */
+/*   Created: 2019/06/28 12:32:23 by vkosi             #+#    #+#             */
+/*   Updated: 2019/06/28 12:56:56 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-char    *ft_strtrim(char const *s)
+char		*ft_strtrim(const char *s)
 {
-    char	*s2;
-    size_t	i;
-    size_t	i2;
-    size_t	i3;
+	size_t	start;
+	size_t	len;
+	char	*tmp;
 
-    i2 = ft_strlen(s) - 1;
-    s2 = (char *)malloc(sizeof(char) * (i2 - i + 2));
-    if (!s || s == NULL || s == '\0')
-        return (NULL);
-	i = 0;
-	i3 = 0;
-    if (!s2 || s2 == NULL)
+	start = 0;
+	if (!s)
 		return (NULL);
-    if (i2 == i)
-        return ("");
-    while (s[i] == ' ' || s[i] == '\t' || s[i] == '\n')
-        i++;
-    while (s[i2] == ' ' || s[i2] == '\t' || s[i2] == '\n')
-        i2--;
-	s2[i2++] = '\0';
-    while (i < i2)
-        s2[i3++] = s[i++];
-    s2[i3] = '\0';
-    return (s2);
+	while (((s[start] == ' ') || (s[start] == '\n') ||
+				(s[start] == '\t')) && (s[start] != '\0'))
+		start++;
+	len = ft_strlen(s);
+	while (((s[len - 1] == ' ') || (s[len - 1] == '\n') ||
+				(s[len - 1] == '\t')) && (s[len - 1] != '\0'))
+		len--;
+	if (len < start)
+		len = start;
+	tmp = ft_strsub(s, start, len - start);
+	if (tmp)
+		return (tmp);
+	return (NULL);
 }
-

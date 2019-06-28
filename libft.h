@@ -6,7 +6,7 @@
 /*   By: vkosi <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/24 16:44:32 by vkosi             #+#    #+#             */
-/*   Updated: 2019/06/26 17:19:21 by vkosi            ###   ########.fr       */
+/*   Updated: 2019/06/28 11:51:03 by vkosi            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 void	ft_putchar(int c);
 void	ft_putstr(char const *str);
 void	ft_putendl(char const *str);
+void	*ft_dup(void const *content, size_t content_size);
 void	ft_putnbr(int nbr);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char const *s, int fd);
